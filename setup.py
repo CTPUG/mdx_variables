@@ -11,7 +11,7 @@ with open('README.rst', 'r') as f:
 
 setup(
     name="mdx_variables",
-    version="0.1.0",
+    version="0.1.1",
     url='http://github.com/CTPUG/mdx_variables',
     license='MIT',
     description="A variables extension for Markdown",
