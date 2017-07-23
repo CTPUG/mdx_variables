@@ -34,13 +34,26 @@ Documentation
 
 Allows inserting variables into Markdown.
 
-Markdown example:
+The following Markdown example:
 
 .. code:: markdown
 
   This paragraph contains ${chickens} chickens.
 
-  This paragraph contains no chickens.
+  This paragraph contains no chickens but ${foxes} foxes.
+
+  Are there ninjas here? ${ninjas}.
+
+Might result in:
+
+.. code:: markdown
+
+  This paragraph contains 5 chickens.
+
+  This paragraph contains no chickens but 3 foxes.
+
+  Are there ninjas here? ninjas not found.
+
 
 Python usage:
 
