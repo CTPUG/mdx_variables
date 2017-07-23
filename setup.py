@@ -10,8 +10,8 @@ with open('README.rst', 'r') as f:
     long_description = f.read()
 
 setup(
-    name="mdx_variables",
-    version="0.1.1",
+    name="mdx-variables",
+    version="0.1.2",
     url='http://github.com/CTPUG/mdx_variables',
     license='MIT',
     description="A variables extension for Markdown",
