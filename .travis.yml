@@ -8,4 +8,4 @@ python:
 install:
    - pip install -r requirements.txt -r requirements-dev.txt
 script:
-   - py.test --clearcache --flake8 mdx_variables.py tests.py
+   - py.test --cache-clear --flake8 mdx_variables.py tests.py
