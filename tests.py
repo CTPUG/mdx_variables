@@ -35,12 +35,22 @@ class TestVariablesPattern(XmlTestCaseMixin, TestCase):
         ext.extendMarkdown(md, {})
         return md
 
-    def test_known_variable(self):
+    def test_known_variable_function(self):
         def bar():
             return "bar"
         md = self.mk_markdown({'vars': {'foo': bar}})
         xml = md.convert("${foo}")
         self.assert_xmltext_equal(xml, "<p>bar</p>")
+
+    def test_known_variable_string(self):
+        md = self.mk_markdown({'vars': {'foo': "zoom"}})
+        xml = md.convert("${foo}")
+        self.assert_xmltext_equal(xml, "<p>zoom</p>")
+
+    def test_known_variable_integer(self):
+        md = self.mk_markdown({'vars': {'foo': 5}})
+        xml = md.convert("${foo}")
+        self.assert_xmltext_equal(xml, "<p>5</p>")
 
     def test_bad_variable(self):
         def err():

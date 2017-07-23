@@ -40,7 +40,7 @@ class VariablePattern(Pattern):
         value = self.getters[var_name]
         if callable(value):
             value = self._catch_error(var_name, value)
-        return value
+        return self._catch_error(var_name, str, value)
 
     def handleMatch(self, m):
         var_name = m.group(2)
