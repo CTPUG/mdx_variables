@@ -60,6 +60,6 @@ class VariablesExtension(Extension):
             '<not_strong')  # add after the not_strong pattern
 
 
-def makeExtension(configs=None):
+def makeExtension(**kwargs):
     """ Initialize the variables extension. """
-    return VariablesExtension(configs=configs)
+    return VariablesExtension(configs=kwargs)
