@@ -30,7 +30,7 @@ class VariablePattern(Pattern):
     def _catch_error(self, var_name, f, *args):
         try:
             return f(*args)
-        except:
+        except Exception:
             pass
         return self._default_error(var_name)
 
