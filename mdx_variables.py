@@ -57,7 +57,7 @@ class VariablesExtension(Extension):
         """ Initializes markdown extension components. """
         md.inlinePatterns.register(
             VariablePattern(self.conf), 'variable',
-            '<not_strong')  # add after the not_strong pattern
+            75)  # add after the not_strong pattern
 
 
 def makeExtension(**kwargs):
