@@ -32,7 +32,7 @@ class TestVariablesPattern(XmlTestCaseMixin, TestCase):
     def mk_markdown(self, conf):
         md = Markdown()
         ext = VariablesExtension(conf)
-        ext.extendMarkdown(md, {})
+        ext.extendMarkdown(md)
         return md
 
     def test_known_variable_function(self):
@@ -84,28 +84,25 @@ class TestVariablesExtension(TestCase):
 
     def mk_markdown(self):
         md = Markdown()
-        md_globals = {}
-        return md, md_globals
+        return md
 
-    def assert_registered(self, md, md_globals):
+    def assert_registered(self, md):
         pattern = md.inlinePatterns['variable']
         self.assertTrue(isinstance(pattern, VariablePattern))
-        self.assertEqual(md_globals, {})
 
-    def assert_not_registered(self, md, md_globals):
+    def assert_not_registered(self, md):
         self.assertFalse('variable' in md.inlinePatterns)
-        self.assertEqual(md_globals, {})
 
     def text_create(self):
         ext = VariablesExtension({'a': 'b'})
         self.assertEqual(ext.conf, {'a': 'b'})
 
     def test_extend_markdown(self):
-        md, md_globals = self.mk_markdown()
+        md = self.mk_markdown()
         ext = VariablesExtension({})
-        self.assert_not_registered(md, md_globals)
-        ext.extendMarkdown(md, md_globals)
-        self.assert_registered(md, md_globals)
+        self.assert_not_registered(md)
+        ext.extendMarkdown(md)
+        self.assert_registered(md)
 
 
 class TestExtensionRegistration(TestCase):

@@ -53,7 +53,7 @@ class VariablesExtension(Extension):
     def __init__(self, configs):
         self.conf = configs
 
-    def extendMarkdown(self, md, md_globals):
+    def extendMarkdown(self, md, md_globals=None):
         """ Initializes markdown extension components. """
         md.inlinePatterns.register(
             VariablePattern(self.conf), 'variable',
