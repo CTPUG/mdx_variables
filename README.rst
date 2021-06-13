@@ -3,10 +3,10 @@ mdx_variables
 
 |variables-ci-badge|
 
-.. |variables-ci-badge| image:: https://travis-ci.org/CTPUG/mdx_variables.png?branch=master
-    :alt: Travis CI build status
+.. |variables-ci-badge| image:: https://github.com/CTPUG/mdx_variables/actions/workflows/tests.yml/badge.svg
+    :alt: GitHub Actions CI status
     :scale: 100%
-    :target: https://travis-ci.org/CTPUG/mdx_variables
+    :target: https://github.com/CTPUG/mdx_variables/actions/workflows/tests.yml
 
 A Markdown extension to add support for variables.
 
