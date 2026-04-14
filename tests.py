@@ -1,9 +1,9 @@
 from unittest import TestCase
+import xml.etree.ElementTree as etree
 
 import xmltodict
 
 from markdown import Markdown
-from markdown.util import etree
 
 from mdx_variables import VariablesExtension, VariablePattern, makeExtension
 
